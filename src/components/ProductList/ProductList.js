@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
-import './ProductList.css';
+
+import { Box, Container, Text } from '@sky-uk/ui-core';
 
 export const GET_FILMS_QUERY = gql`
   {
@@ -21,15 +22,24 @@ export function ProductList(props) {
   if (error) return <pre>{error.message}</pre>
 
   return (
-    <ul data-testid="ProductList" className="product-list">
+    <Container $maxWidth="80%">
       {data.allFilms?.films && data.allFilms.films.map(film => {
         return (
-          <li key={film.id}>
-            <h4>{film.title}</h4>
-            <span>Release Date: {film.releaseDate}</span>
-          </li>
+          <Box 
+            key={film.id} 
+            $display="flex" 
+            $justifyContent="space-between"
+            $alignItems="center" 
+            $marginBottom="4"
+            $border={true} 
+            $borderColor="grey40" 
+            $borderRadius="1" $padding={4} 
+          >
+            <Text $fontSize="display-5" $fontWeight="bolder">{film.title}</Text>
+            <Text $fontSize="display-6">Release Date: {film.releaseDate}</Text>
+          </Box>
         )
       })}
-    </ul>
+    </Container>
   )
 }
