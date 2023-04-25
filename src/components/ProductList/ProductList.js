@@ -35,8 +35,8 @@ export function ProductList(props) {
             $borderColor="grey40" 
             $borderRadius="1" $padding={4} 
           >
-            <Text $fontSize="display-5" $fontWeight="bolder">{film.title}</Text>
-            <Text $fontSize="display-6">Release Date: {film.releaseDate}</Text>
+            <Text as="h5" $fontSize="display-5" $fontWeight="bolder">{film.title}</Text>
+            <Text as="p" $fontSize="display-6">Release Date: {film.releaseDate}</Text>
           </Box>
         )
       })}
