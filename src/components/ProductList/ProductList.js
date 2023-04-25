@@ -4,7 +4,7 @@ import { useQuery, gql } from '@apollo/client';
 import { Box, Container, Text } from '@sky-uk/ui-core';
 
 export const GET_FILMS_QUERY = gql`
-  {
+  query getFilms {
     allFilms {
       films {
         title
@@ -23,7 +23,7 @@ export function ProductList(props) {
 
   return (
     <Container $maxWidth="80%">
-      {data.allFilms?.films && data.allFilms.films.map(film => {
+      {data?.allFilms?.films && data.allFilms.films.map(film => {
         return (
           <Box 
             key={film.id} 
