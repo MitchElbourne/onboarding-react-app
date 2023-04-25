@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';

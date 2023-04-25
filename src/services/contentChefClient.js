@@ -1,4 +1,4 @@
-import ContentChefClient, { createUrl } from '@contentchef/contentchef-node';
+import ContentChefClient from '@contentchef/contentchef-node';
 
 class ContentChef {
   client;
